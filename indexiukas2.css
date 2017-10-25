@@ -16,8 +16,6 @@ html {
 kai send, tai zinute uždėti kitą*/
 
 
-/*@media all and (min-width: 320px) and (max-width: 767px) { 
-}*/
 
 /*ir didesniam nei 1366px*/
 
@@ -70,12 +68,19 @@ header{
 	padding:1rem 0;
 	z-index: 2;
 }
-
+.nerodyti-header {
+ 	display:none;
+ }
 
 .vazinetojas {
 	 transition: background-color 0.5s ease;
 	background-color: rgba(34,34,34, 0.8); 
 	z-index:1;
+}
+.pop-color {
+	transition: background-color 0.5s ease;
+	background-color: rgba(34,34,34, 0.8); 
+/*	z-index:99999999;*/
 }
 
 header nav ul{
@@ -164,13 +169,7 @@ h1{
 /* NEVEIKTI PILNAI*/
 
 /*sutvarkyti dydį foto, kad padidėtų*/
-.hovered-photo {
-	transform:scale(1.5,1.5);
-width: 100%;
-height:auto;
-border-radius:0px;
-z-index:99;
-}
+
 .history-photo p {
 	display:inline-block;
 }
@@ -303,6 +302,9 @@ h3 {
   margin: 0 8vw 1.625rem 8vw;
 	padding:1rem;
 } 
+.team-section{
+	position:relative;
+}
 .team-container {
 	display:flex;
 	flex-wrap:wrap;
@@ -310,7 +312,6 @@ h3 {
     margin: auto;
 }
 .team-member {
-	display:inline-block;
 	flex-basis:30%;
 	margin: 1rem auto;
 	text-align: center;
@@ -344,10 +345,37 @@ border: 0.25rem solid #f1f1f1;
 	display:inline-block;
 }
 
-
-.pop-1, .pop-2, .pop-3 {
-	display:none;
+.pop {
+display:none;
 }
+div.hovered-photo {
+/*	transform:scale(1.5,1.5);*/
+display:block;
+z-index: 99;
+    width: 80%;
+    height: 80%;
+    position: fixed;
+    top: 10%;
+   left: 10%;
+    background-color:#f1f1f1 ;
+    border-radius: 1rem;
+    border: 0.05rem solid gray;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    cursor:pointer;
+}
+
+/*gal prideti varda ir pozicija*/
+
+div.hovered-photo p{
+	font-family: 'Roboto Slab';
+    color: #777777;
+    font-size: 1rem;
+    line-height: 2rem;
+    text-align: center;
+    margin:4rem 2rem 2rem 2rem;
+}
+
 .team-section .twit:before {
     font-size:1.5rem;
 	color:#222222; 
@@ -597,3 +625,54 @@ font-family: 'icomoon';
 	color:#3b5998;
 }
  
+
+ @media all and (min-width : 320px) and (max-width : 480px) {
+.team-member {
+    flex-basis: 100%;
+}
+header nav{
+display:none;
+}
+
+.home-logo{
+	display:none;
+}
+ .features-articles article{
+	flex-basis: 100%;
+}
+ .natural-feature:before, section .unique-feature:before, section .quick-feature:before {
+	margin: 0 11rem 1.625rem 11rem;
+}
+.features-section p {
+    padding: 0 1.5rem 1rem 1.5rem;
+}
+
+}
+
+@media all and (min-width: 481px) and (max-width: 767px) { 
+	header nav{
+display:none;
+}
+
+.home-logo{
+	display:none;
+}
+
+/*.burger {
+	appear;
+}*/
+
+.features-articles {
+	   min-width:95%;
+}
+
+ .features-articles article{
+	flex-basis: 50%;
+}
+ .team-member {
+    flex-basis: 50%;
+}
+ .natural-feature:before, section .unique-feature:before, section .quick-feature:before {
+	    margin: 0 15.5vw 1.625rem 15.5vw;
+}
+}

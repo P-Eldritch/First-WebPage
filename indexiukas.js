@@ -55,12 +55,64 @@ thirdContent.classList.remove("hidden-class");
 
 });
 
+// PopUp langas paspaudus
+// var KarbisPhoto = document.querySelectorAll(".member-photo");
+// var KarbisText = document.querySelectorAll(".pop");
+// for(var i=0; i < KarbisPhoto.length; i++) {
+// 	KarbisPhoto[i].addEventListener("click", function(num){
+// 	    return function() {
+//             KarbisText[num].classList.add("hovered-photo");
+//         };
+//     }(i)); 
+// }
+
+
+
+// (function(){
+//     var clicked = false;
+//     document.querySelector('.member-photo').addEventListener('click', function(){
+//         clicked = clicked ? false : true;
+//     });
+//     document.querySelector('.pop').addEventListener('click', function(){
+//         if (clicked) {
+//             this.classList.toggle("hovered-photo"); //bus problemu su THIS
+//         }
+//         clicked = false;
+//     });
+// })();
+
+
 var KarbisPhoto = document.querySelectorAll(".member-photo");
-for(var i=0; i < KarbisPhoto.length; i++) {
-KarbisPhoto[i].addEventListener("click", function(){
-this.classList.toggle("hovered-photo");
-}
-)};
+var KarbisText = document.querySelectorAll(".pop");
+
+	var clicked = false;
+	for(var i=0; i < KarbisPhoto.length; i++) {
+		KarbisPhoto[i].addEventListener("click", function(num){
+			console.log(clicked);
+		clicked = clicked ? false : true;	
+	    return function(clicked) {
+            KarbisText[num].classList.add("hovered-photo");
+            //for gal id4t, kad visas sekcijas nudazytu
+
+            document.querySelector("header").classList.add("nerodyti-header");
+            document.querySelector("header").classList.remove("vazinetojas");
+            if (clicked) {
+            	console.log(num);
+             	KarbisText[num].addEventListener('click', function(){
+             		console.log(num);
+           			KarbisText[num].classList.remove("hovered-photo"); 
+           			document.querySelector("header").classList.remove("nerodyti-header");
+            		document.querySelector("header").classList.add("vazinetojas"); 
+            		clicked = false;
+
+            		console.log(clicked);
+            		// return clicked;
+        		});
+    	}
+    };
+    }(i)); 
+	};
+
 
 
 
