@@ -1,23 +1,15 @@
 
 @import "less/reset.less";
 @import "less/reset2.less";
-@import "less/fonts.less";
+@import "Fonts/stylesheet.css";
+@import "Fonts/style.css";
 
-/*kad sukristu i stulpelius headery*/
 
-/* SET ROOT ELEMENT SIZE, min size 10 px,  step 0.05 device width */
+/*  ROOT ELEMENT dydis*/
 
 html {
 	font-size: calc(10px + 0.5vw);
 }
-
-/*+------------+*/
-/*uzdeti queries
-kai send, tai zinute uždėti kitą*/
-
-
-
-/*ir didesniam nei 1366px*/
 
 a {
 	text-decoration: none;
@@ -40,7 +32,7 @@ a {
 } 
 .home-logo {
 	font-family:'Pacifico';
-	font-size:1.875rem;
+	font-size:2rem;
 	color:#fed136;
 	margin-left:2rem;
 }
@@ -55,7 +47,7 @@ section {
 	flex-direction:column;
 	align-items:space-between;
 	min-height: 100vh;
-	/*padding:20vh;*/
+
 }
 /*Header Styles*/
 header{
@@ -73,21 +65,21 @@ header{
  }
 
 .vazinetojas {
-	 transition: background-color 0.5s ease;
+	transition: background-color 0.5s ease;
 	background-color: rgba(34,34,34, 0.8); 
 	z-index:1;
 }
 .pop-color {
 	transition: background-color 0.5s ease;
 	background-color: rgba(34,34,34, 0.8); 
-/*	z-index:99999999;*/
+
 }
 
 header nav ul{
-display:flex;
-flex-direction:row;
-flex-wrap:wrap;
-margin-right:2rem;
+	display:flex;
+	flex-direction:row;
+	flex-wrap:wrap;
+	margin-right:2rem;
 }
 
 header nav ul li {
@@ -132,8 +124,8 @@ h1{
 	text-transform: capitalize;
 	font-style:italic;
 	margin:0;
-
 }
+
 .header-button {
 	background-color: #fed136;
 	border-radius:5%;
@@ -147,34 +139,39 @@ h1{
 	opacity:1;}
 
 .header-button:hover {
-	text-decoration: underline;
+	opacity:0.8;
 }
+
 .img-wrapper {
 	position:relative;
 }
 
-/*//border box uzmesti gal*/
+.img1 {
+	background-image: url(https://tinyurl.com/yctwqcyv);
+}
+.img2 {
+	background-image: url(business-trade-show.jpg);
+}
+.img3 {
+	background-image: url(Ideas-to-Dollars.jpg);
+}
+
 .about-section .history-photo {
 	border-radius:50%;
-	background-image: url(https://tinyurl.com/yctwqcyv);
 	background-repeat: no-repeat;
 	background-size: cover;
-	/*background-position: center;*/
+	background-position: center;
 	width: 10.875rem;
     height: 10.875rem;
     margin: 3rem auto;
 	text-align: center;
 	border: 0.25rem solid #f1f1f1;
 }
-/* NEVEIKTI PILNAI*/
-
-/*sutvarkyti dydį foto, kad padidėtų*/
 
 .history-photo p {
 	display:inline-block;
 }
-/*prie 760 permesti bloka i kaire, nuimti gal paspaudimo efekta ir apdaryt leto atsiradimo*/
-/*padaryti cropinimą*/
+
 .about-section .img-wrapper:nth-child(odd) h4, .about-section .img-wrapper:nth-child(even) h4 {
 	font-family:"Montserrat";
 	font-size:1rem;
@@ -196,6 +193,7 @@ h1{
 	right: 8.5%;
 	text-align:left;
 }
+
 .about-section .img-wrapper:nth-child(odd) p, .about-section .img-wrapper:nth-child(even) p {
 	font-family: "Droid Serif";
     font-size: 0.75rem;
@@ -208,6 +206,7 @@ h1{
     width: 25%;
     z-index: -1;
 }
+
 .about-section .img-wrapper:nth-child(odd) p{
     left: 7%;
     text-align:right;}
@@ -260,6 +259,7 @@ h3 {
 	line-height: 1.25rem;
 	text-align: center;
 	padding:0 1rem 1rem 1rem;
+
 }
 
 .features-text, .contact-text{
@@ -273,7 +273,6 @@ h3 {
 .contact-text{
 	    margin: 0.5rem auto 5rem auto;
 }
-/* uzmesti kursoriu ir issikleidima*/
 
 .natural-feature:before{
     content: '\e903';
@@ -294,14 +293,15 @@ h3 {
 .quick-feature:before {
 	display:inline-block;
 	font-family: 'icomoon';
-     font-size:3rem;
+    font-size:3rem;
 	color:#fed136; 
 	text-align: center;
 	border-radius:50%;
 	border:0.25rem solid #fed136;
-  margin: 0 8vw 1.625rem 8vw;
+  	margin: 0 8vw 1.625rem 8vw;
 	padding:1rem;
 } 
+
 .team-section{
 	position:relative;
 }
@@ -311,21 +311,26 @@ h3 {
 	width: 80%;
     margin: auto;
 }
+
 .team-member {
 	flex-basis:30%;
 	margin: 1rem auto;
 	text-align: center;
 }
+
 .member-photo {
 	border-radius:50%;
-border: 0.25rem solid #f1f1f1;
+	border: 0.25rem solid #f1f1f1;
     width: 70%;
+    width: 10.875rem;
+    height: 10.875rem;
 }
-/*ir dar u=d4ti, kad tipo press for more info*/
+
 .member-photo:hover {
 	cursor:pointer;
+		opacity:0.5;
 } 
-/*//iconus galiu apibrezti*/
+
 .member-name {
 	font-family: 'Montserrat';
 	font-size: 1rem;
@@ -346,17 +351,16 @@ border: 0.25rem solid #f1f1f1;
 }
 
 .pop {
-display:none;
+	display:none;
 }
 div.hovered-photo {
-/*	transform:scale(1.5,1.5);*/
-display:block;
-z-index: 99;
+	display:block;
+	z-index: 99;
     width: 80%;
     height: 80%;
     position: fixed;
     top: 10%;
-   left: 10%;
+   	left: 10%;
     background-color:#f1f1f1 ;
     border-radius: 1rem;
     border: 0.05rem solid gray;
@@ -364,8 +368,6 @@ z-index: 99;
     overflow-y: auto;
     cursor:pointer;
 }
-
-/*gal prideti varda ir pozicija*/
 
 div.hovered-photo p{
 	font-family: 'Roboto Slab';
@@ -389,6 +391,7 @@ div.hovered-photo p{
 	color:#00aced;
 	border-color:#00aced;
 }
+
 .team-section .fb:before {
     font-size:1.5rem;
 	color:#222222; 
@@ -404,7 +407,7 @@ div.hovered-photo p{
 }
 
 .linked:before {
-font-family: 'icomoon';
+	font-family: 'icomoon';
 	content: "\e901";
     font-size:1.5rem;
 	color:#222222; 
@@ -419,71 +422,101 @@ font-family: 'icomoon';
 	border-color:#3b5998;
 }
  
-
 .reviews-section {
 	background-color: #f7f7f7;
 	align-items:center;
 }
-.carouselbox {
-  font-family: 'Roboto Slab';
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  color: #777777;
-  width: 100%;
-  position: relative;
-  min-height:100%;
+
+.slide-box {
+	font-family: 'Roboto Slab';
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	color: #777777;
+	width: 100%;
+	position: relative;
+	min-height:100%;
+}
+.content{
+	border-radius: 1rem;
+    padding: 3rem;
+    margin: auto 2rem;
+    background-color: #e2e2e2;
+    height: 50vh;
 }
 
-.content li {
-  font-size: 1rem;
-  margin: 0;
-  padding: 1rem;
-  height:100%;
-  list-style: none;
-  text-align: center;
+.reviews {
+	font-size: 1rem;
+	margin: 0;
+	padding: 1rem;
+	height:100%;
+	list-style: none;
+	text-align: center;
+	display:none;
 }
-.hidden-class {
-  display:none;
-}
- .buttons {
-  padding: 1rem 0;
-  text-align: center;
-/*  z-index: 10;*/
-  position: relative;
-  top:50vh;
-
-}
-.carouselbox button {
-  border: 0.2rem solid black;
-  display: none;
-  margin:0.25rem;
-  padding:0.25rem;
-  border-radius:50%;
-    display: inline-block;
-}
-.offscreen {
-  position: absolute;
-  left: -2000vh;
-}
-
-.reviews-section{
-	background-color:#f9f9f9;
-}
-
 .quote{
 	font-family: 'Roboto Slab';
 	color: #777777;
-	font-size:0.875rem;
-	line-height: 1.25rem;
+	font-size:1rem;
+	line-height: 1.5rem;
+	font-style: Italic;
+
 }
 
 .author {
 	font-family: 'Montserrat';
 	font-size:1.125rem;
 	font-weight: 700;
+	text-transform: uppercase;
 	color:#222222;
+	padding:2rem;
 }
-/*formą pikseliais gal*/
+
+.next:before {
+	font-family: 'icomoon';
+	content: "\e907";
+    font-size:5rem;
+	color:#222222; 
+	text-align: center;
+}
+
+.prev:before {
+	font-family: 'icomoon';
+	content: "\e908";
+    font-size:5rem;
+	color:#222222; 
+	text-align: center;
+}
+
+.prev, .next {
+	border-radius:5px;
+	cursor:pointer;
+	position:absolute;
+	top:50%;
+}
+
+.prev {
+	left:3%;
+}
+
+.next{
+	right:3%;
+}
+.prev:hover:before{
+	color:#333333;
+	opacity:0.8;
+	font-size:7rem;
+}
+
+.next:hover:before{
+	color:#333333;
+	opacity:0.8;
+	font-size:7rem;
+}
+
+.visible {
+	display:block;
+}
+
 .form-section{
 	position:relative;
 	background-color: #222222;
@@ -501,22 +534,19 @@ font-family: 'icomoon';
 	text-align: center;
 }
 
-.wraper {
+.wrapper {
 	display:flex;	
 	flex-direction:row;
 	justify-content:center;
 
 }
-.wraper .column-1,.wraper .column-2 {
+.column-1,.column-2 {
 	display:flex;
 	flex-direction:column;
-
-min-width: 40vw;
-
+	min-width: 40vw;
 }
-/*use calc*/
-.column-1 input {
 
+.column-1 input {
 	margin:1vh;
 	height: 5vh;
 }
@@ -526,7 +556,6 @@ min-width: 40vw;
 	height: 21vh;
 }
 
-
 input::placeholder, textarea::placeholder {
 	font-family: 'Montserrat';
 	font-weight: 700;
@@ -534,8 +563,6 @@ input::placeholder, textarea::placeholder {
 	text-transform: uppercase;
 	color:#BBB;
 }
-
-/*uzdeti efektuka pahoverinus*/
 
 input[type="submit"] {
 	background-color: #fed136;
@@ -551,20 +578,21 @@ input[type="submit"] {
 	margin-top:1.25rem;
 }
 
-/*input[type="submit"]:hover {
-	background-color: rgba(255, 255, 255, 0.01);
-}*/
+input[type="submit"]:hover {
+	opacity:0.8;
+	cursor:pointer;
+}
 
 .submit {
 	text-align: center;
 }
+
 footer {
 	position:relative;
-
 }
 
 footer span {
-position:absolute;
+	position:absolute;
     top: 1.5rem;
     left: 2rem;
     font-family: "Montserrat";
@@ -582,26 +610,21 @@ footer ul{
 .footer-list li{
 	padding:1rem 0;
 }
-.footer-list a:hover{
-
-}
 .pin:before {
 	font-family: 'icomoon';
 	content: "\e906";
     font-size:2rem;
 	color:#222222; 
 	text-align: center;
-/*	border-radius:50%;
-	border:0.25rem solid #fed136;*/
-/*	margin: 0 10rem 1.625rem 10rem;*/
 	padding:1rem;
 } 
+
 .pin:hover:before{
 	color:red;
 }
 
 .twit:before {
-font-family: 'icomoon';
+	font-family: 'icomoon';
 	content: "\e900";
     font-size:2rem;
 	color:#222222; 
@@ -612,8 +635,9 @@ font-family: 'icomoon';
 .twit:hover:before{
 	color:#00aced;
 }
+
 .fb:before {
-font-family: 'icomoon';
+	font-family: 'icomoon';
 	content: "\e902";
     font-size:2rem;
 	color:#222222; 
@@ -624,55 +648,144 @@ font-family: 'icomoon';
 .fb:hover:before{
 	color:#3b5998;
 }
- 
 
  @media all and (min-width : 320px) and (max-width : 480px) {
-.team-member {
-    flex-basis: 100%;
-}
-header nav{
-display:none;
+	.team-member {
+	    flex-basis: 100%;
+	}
+
+	 .features-articles article{
+		flex-basis: 100%;
+	}
+
+	 .natural-feature:before, section .unique-feature:before, section .quick-feature:before {
+		margin: 0 11rem 1.625rem 11rem;
+	}
+
+	.features-section p {
+	    padding: 0 1.5rem 1rem 1.5rem;
+	}
+
+	.wrapper {
+		flex-direction: column; 
+	}
+
+	.column-1,.column-2 {
+		    margin: auto 2rem;
+	}
+
+	footer ul{
+	    justify-content: flex-end;
+	}
 }
 
-.home-logo{
-	display:none;
-}
- .features-articles article{
-	flex-basis: 100%;
-}
- .natural-feature:before, section .unique-feature:before, section .quick-feature:before {
-	margin: 0 11rem 1.625rem 11rem;
-}
-.features-section p {
-    padding: 0 1.5rem 1rem 1.5rem;
+
+@media all and (min-width : 320px) and (max-width : 341px){
+	section .natural-feature:before, section .unique-feature:before, section .quick-feature:before {
+		margin: 0 7rem 1.625rem 7rem;
+	}
 }
 
-}
 
 @media all and (min-width: 481px) and (max-width: 767px) { 
-	header nav{
-display:none;
+	
+	.features-articles {
+		   min-width:95%;
+	}
+
+	 .features-articles article{
+		flex-basis: 50%;
+	}
+	 .team-member {
+	    flex-basis: 50%;
+	}
+	 .natural-feature:before, .unique-feature:before, .quick-feature:before {
+		    margin: 0 15.5vw 1.625rem 15.5vw;
+	}
+
+	.wrapper {
+		flex-direction: column; 
+	}
+	.column-1,.column-2 {
+		    margin: auto 2rem;
+	}
+
 }
 
-.home-logo{
-	display:none;
-}
+ @media all and (min-width : 320px) and (max-width : 568px) {
 
-/*.burger {
-	appear;
-}*/
+	.main-nav{
+	    	position:relative;
+	        right: 2rem;
+	}
 
-.features-articles {
-	   min-width:95%;
-}
+	.burger{
+	    cursor: pointer;
+	    display: block;
+	}
 
- .features-articles article{
-	flex-basis: 50%;
-}
- .team-member {
-    flex-basis: 50%;
-}
- .natural-feature:before, section .unique-feature:before, section .quick-feature:before {
-	    margin: 0 15.5vw 1.625rem 15.5vw;
-}
+	.burger:before,
+	.burger:after{
+		content: "";
+	    background: #EEEEEE;
+	    display: block;
+	    width: 2.5rem;
+	    height: 0.5rem;
+	    margin-bottom: 0.5rem;
+	    position: relative;
+	    top: 0;
+	    transition: all ease-in-out 0.4s;
+	}
+
+	.main-nav.open .burger:after{
+	    transform: rotate(135deg);
+	    top: -0.5rem;
+		right: -4.5rem;
+	}
+	.main-nav.open .burger:before{
+	    transform: rotate(-135deg);
+	    top: 0.5rem;
+		right: -4.5rem;
+	}
+
+	header nav ul {
+		display: none;
+		color: #fff;
+	}
+
+	.main-nav.open ul {
+		position: relative;
+		display: block;
+		text-align: right;
+		right: -1.5rem;
+	}
+
+	header nav ul li {
+	    margin: 1rem auto;
+	}
+
+	header {
+		align-items: unset;
+	}
+
+	.about-section .history-photo {
+		    margin: 3rem auto;
+		    text-align: unset;
+	}
+	.about-section .img-wrapper:nth-child(odd) h4, .about-section .img-wrapper:nth-child(even) h4 {
+		 position: static; 
+		 text-align: center;
+		 width:unset;
+		 margin:unset;
+	}
+	.about-section .img-wrapper:nth-child(odd) p, .about-section .img-wrapper:nth-child(even) p {
+	    position: relative;
+	    transform: translateX(50%);
+	    width: 50%;
+	    margin: 2rem auto;
+	    left: unset;
+	    right:unset;
+	    text-align: center; 
+	    padding:unset;
+	}
 }
