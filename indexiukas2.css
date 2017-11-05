@@ -492,6 +492,7 @@ div.hovered-photo p{
 	cursor:pointer;
 	position:absolute;
 	top:50%;
+	height:0px;
 }
 
 .prev {
@@ -787,5 +788,11 @@ footer ul{
 	    right:unset;
 	    text-align: center; 
 	    padding:unset;
+	}
+}
+
+@media all and (min-width : 1367px)  {
+	 .natural-feature:before, .unique-feature:before, .quick-feature:before {
+		    margin: 0 10vw 1.625rem 10vw;
 	}
 }
