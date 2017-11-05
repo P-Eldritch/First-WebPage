@@ -793,6 +793,6 @@ footer ul{
 
 @media all and (min-width : 1367px){
 	 .natural-feature:before, .unique-feature:before, .quick-feature:before {
-		    margin: 0 9.9vw 1.625rem 9.9vw;
+		    margin: 0 10vw 1.625rem 10vw;
 	}
 }
